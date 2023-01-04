@@ -4,7 +4,7 @@ set -e
 
 variant=${1:-${VARIANT}}
 service=${2:-${SERVICE_NAME}}
-port=${3:-${PORT_NUMBER}}
+endpoint=${3:-${WAIT_ENDPOINT}}
 
 path=$(dirname "$0")
 
@@ -38,7 +38,7 @@ step() {
 
   docker compose "$operation" "$service"
   if [[ "$operation" == "start" ]]; then
-    "$path"/wait-for.sh -t 120 "http://localhost:$port/manage/health" -- echo "Host localhost:$port is active"
+    "$path"/wait-for.sh -t 120 "$endpoint" -- echo "Endpoint $endpoint is up"
   fi
 
   newman run \
