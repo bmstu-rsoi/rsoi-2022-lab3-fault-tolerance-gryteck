@@ -7,3 +7,7 @@ spring:
     config:
       uri: ${CONFIG_SERVER_URL:http://localhost:8888}
       enabled: true
+
+server:
+  port: ${PORT:8050}
+

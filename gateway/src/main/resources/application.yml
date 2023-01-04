@@ -18,12 +18,3 @@ spring:
           predicates:
             - Path=/api/v1/flights/**
           uri: ${app.service.flightService.baseUrl:}
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-server:
-  port: ${PORT:}
