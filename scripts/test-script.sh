@@ -36,7 +36,7 @@ step() {
 
   printf "=== Step %d: %s %s ===\n" "$step" "$operation" "$service"
 
-  docker compose "$operation" "$service"
+  docker compose -f docker-compose/docker-compose.yml "$operation" "$service"
   if [[ "$operation" == "start" ]]; then
     "$path"/wait-for.sh -t 120 "$endpoint" -- echo "Endpoint $endpoint is up"
   fi
