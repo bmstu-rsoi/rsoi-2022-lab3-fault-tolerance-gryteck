@@ -9,10 +9,14 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.r2dbc.connection.init.CompositeDatabasePopulator
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator
+import org.springframework.scheduling.annotation.EnableAsync
+import org.springframework.scheduling.annotation.EnableScheduling
 import reactivefeign.spring.config.EnableReactiveFeignClients
 
 @SpringBootApplication
 @EnableReactiveFeignClients
+@EnableScheduling
+@EnableAsync
 class TicketServiceApplication
 
 fun main(args: Array<String>) {

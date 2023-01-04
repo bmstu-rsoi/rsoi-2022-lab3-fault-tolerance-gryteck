@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS privilege_history;
-DROP TABLE IF EXISTS privilege;
+-- DROP TABLE IF EXISTS privilege_history;
+-- DROP TABLE IF EXISTS privilege;
 
 CREATE TABLE IF NOT EXISTS privilege
 (
@@ -21,4 +21,4 @@ CREATE TABLE IF NOT EXISTS privilege_history
         CHECK (operation_type IN ('FILL_IN_BALANCE', 'DEBIT_THE_ACCOUNT'))
 );
 
-INSERT INTO privilege VALUES(1, 'Test Max', 'BRONZE', 0);
+INSERT INTO privilege VALUES(1, 'Test Max', 'BRONZE', 0) ON CONFLICT (id) do nothing;

@@ -5,5 +5,5 @@ import io.gryteck.ticket_service_api.TicketResponse
 
 data class UserInfoResponse(
     val tickets: List<TicketResponse>,
-    val privilege: PrivilegeShortInfo
+    val privilege: PrivilegeShortInfo?
 )
